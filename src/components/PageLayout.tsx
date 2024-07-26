@@ -19,7 +19,7 @@ export const PageLayout = ({ children }: PropsWithChildren) => (
   <HeaderContainer
     render={({ isSideNavExpanded, onClickSideNavExpand }) => (
       <>
-        <Header aria-label="IBM Platform Name">
+        <Header aria-label="Star Wars Store Name">
           <SkipToContent />
           <HeaderMenuButton
             aria-label={isSideNavExpanded ? 'Close menu' : 'Open menu'}
@@ -27,8 +27,8 @@ export const PageLayout = ({ children }: PropsWithChildren) => (
             isActive={isSideNavExpanded}
             aria-expanded={isSideNavExpanded}
           />
-          <HeaderName href="#" prefix="IBM">
-            [Platform]
+          <HeaderName href="#" prefix="Star Wars">
+            Store
           </HeaderName>
           {/* <SideNav
             aria-label="Side navigation"
