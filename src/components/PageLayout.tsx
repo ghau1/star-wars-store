@@ -1,6 +1,4 @@
-import {
-  Fade,
-} from '@carbon/icons-react';
+import { Car, Globe, Rocket, Tree, User, Video } from '@carbon/icons-react';
 import {
   Header,
   HeaderContainer,
@@ -9,9 +7,7 @@ import {
   SideNav,
   SideNavItems,
   SideNavLink,
-  SideNavMenu,
-  SideNavMenuItem,
-  SkipToContent
+  SkipToContent,
 } from '@carbon/react';
 import { PropsWithChildren } from 'react';
 
@@ -37,57 +33,23 @@ export const PageLayout = ({ children }: PropsWithChildren) => (
             href="#main-content"
           >
             <SideNavItems>
-              <SideNavMenu renderIcon={Fade} title="Category title">
-                <SideNavMenuItem href="https://www.carbondesignsystem.com/">
-                  Link
-                </SideNavMenuItem>
-                <SideNavMenuItem href="https://www.carbondesignsystem.com/">
-                  Link
-                </SideNavMenuItem>
-                <SideNavMenuItem href="https://www.carbondesignsystem.com/">
-                  Link
-                </SideNavMenuItem>
-              </SideNavMenu>
-              <SideNavMenu
-                renderIcon={Fade}
-                title="Category title"
-                isActive={true}
-              >
-                <SideNavMenuItem href="https://www.carbondesignsystem.com/">
-                  Link
-                </SideNavMenuItem>
-                <SideNavMenuItem
-                  aria-current="page"
-                  href="https://www.carbondesignsystem.com/"
-                >
-                  Link
-                </SideNavMenuItem>
-                <SideNavMenuItem href="https://www.carbondesignsystem.com/">
-                  Link
-                </SideNavMenuItem>
-              </SideNavMenu>
-              <SideNavMenu renderIcon={Fade} title="Category title">
-                <SideNavMenuItem href="https://www.carbondesignsystem.com/">
-                  Link
-                </SideNavMenuItem>
-                <SideNavMenuItem href="https://www.carbondesignsystem.com/">
-                  Link
-                </SideNavMenuItem>
-                <SideNavMenuItem href="https://www.carbondesignsystem.com/">
-                  Link
-                </SideNavMenuItem>
-              </SideNavMenu>
-              <SideNavLink
-                renderIcon={Fade}
-                href="https://www.carbondesignsystem.com/"
-              >
-                Link
+              <SideNavLink renderIcon={User} href="#">
+                People
               </SideNavLink>
-              <SideNavLink
-                renderIcon={Fade}
-                href="https://www.carbondesignsystem.com/"
-              >
-                Link
+              <SideNavLink renderIcon={Globe} href="#">
+                Planets
+              </SideNavLink>
+              <SideNavLink renderIcon={Video} href="#">
+                Films
+              </SideNavLink>
+              <SideNavLink renderIcon={Tree} href="#">
+                Species
+              </SideNavLink>
+              <SideNavLink renderIcon={Car} href="#">
+                Vehicles
+              </SideNavLink>
+              <SideNavLink renderIcon={Rocket} href="#">
+                Starships
               </SideNavLink>
             </SideNavItems>
           </SideNav>
