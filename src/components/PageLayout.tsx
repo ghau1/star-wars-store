@@ -30,7 +30,7 @@ export const PageLayout = ({ children }: PropsWithChildren) => (
           <HeaderName href="#" prefix="Star Wars">
             Store
           </HeaderName>
-          {/* <SideNav
+          <SideNav
             aria-label="Side navigation"
             expanded={isSideNavExpanded}
             onSideNavBlur={onClickSideNavExpand}
@@ -90,7 +90,7 @@ export const PageLayout = ({ children }: PropsWithChildren) => (
                 Link
               </SideNavLink>
             </SideNavItems>
-          </SideNav> */}
+          </SideNav>
         </Header>
         {children}
       </>

@@ -1,5 +1,6 @@
-import { Button, NumberInput } from '@carbon/react';
-import { useState } from 'react';
+import { Button, NumberInput, ToastNotification } from '@carbon/react';
+import { useRef } from 'react';
+import { toast } from 'react-toastify';
 import styles from './ProductCard.module.scss';
 
 type Product = {
@@ -14,14 +15,21 @@ interface ProductCardProps {
 }
 
 export function ProductCard({ product }: ProductCardProps) {
-  const [quantity, setQuantity] = useState(1);
-
-  const handleQuantityChange = event => {
-    setQuantity(event.imaginaryTarget.value);
-  };
+  const quantityRef = useRef<HTMLInputElement>(null);
 
   const handleBuy = () => {
-    console.log(`Buying ${quantity} of ${product.name}`);
+    toast(
+      <ToastNotification
+        kind="success"
+        title="Purchase Successful"
+        subtitle={`You bought ${quantityRef.current?.value} of ${product.name}`}
+      />,
+      {
+        position: 'top-right',
+        autoClose: 3000,
+        hideProgressBar: true,
+      }
+    );
   };
 
   return (
@@ -32,10 +40,10 @@ export function ProductCard({ product }: ProductCardProps) {
       <span>{product.cost_in_credits}</span>
       <div className="product-actions">
         <NumberInput
-          id={`quantity-${product.id}`}
+          id={`quantity-${product.name}`}
           min={1}
-          value={quantity}
-          onChange={handleQuantityChange}
+          value={1}
+          ref={quantityRef}
           label="Quantity"
           hideLabel
         />
