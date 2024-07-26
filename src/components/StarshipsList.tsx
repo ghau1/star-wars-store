@@ -9,7 +9,7 @@ export const StarshipsList: React.FC = () => {
   if (isError) return <div>Error: {error.message}</div>;
 
   return (
-    <div>
+    <div className='starships-list'>
       <h1>Star Wars Starships</h1>
       <ul>
         {data?.results.map(starship => (
