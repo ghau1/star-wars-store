@@ -13,7 +13,7 @@ export const StarshipsList: React.FC = () => {
 
   return (
     <div className={styles['starships-list']}>
-      <h1>Star Wars Starships</h1>
+      <h1 className={styles['main-title']}>Star Wars Starships</h1>
 
       <Grid fullWidth>
         {data?.results.map(starship => (
@@ -23,18 +23,20 @@ export const StarshipsList: React.FC = () => {
         ))}
       </Grid>
 
-      <Pagination
-        totalItems={data?.count}
-        backwardText="Previous page"
-        forwardText="Next page"
-        pageSize={10}
-        pageSizes={[10]}
-        itemsPerPageText="Items per page"
-        page={page}
-        onChange={({ page }) => {
-          setPage(page);
-        }}
-      />
+      <div className={styles['pagination']}>
+        <Pagination
+          totalItems={data?.count}
+          backwardText="Previous page"
+          forwardText="Next page"
+          pageSize={10}
+          pageSizes={[10]}
+          itemsPerPageText="Items per page"
+          page={page}
+          onChange={({ page }) => {
+            setPage(page);
+          }}
+        />
+      </div>
     </div>
   );
 };

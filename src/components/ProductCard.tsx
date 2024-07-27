@@ -1,5 +1,5 @@
 import { Button, NumberInput, ToastNotification } from '@carbon/react';
-import { useRef } from 'react';
+import { useCallback, useRef } from 'react';
 import { toast } from 'react-toastify';
 import styles from './ProductCard.module.scss';
 
@@ -17,12 +17,14 @@ interface ProductCardProps {
 export function ProductCard({ product }: ProductCardProps) {
   const quantityRef = useRef<HTMLInputElement>(null);
 
-  const handleBuy = () => {
+  const handleBuy = useCallback(() => {
     toast(
       <ToastNotification
+        hideCloseButton
         kind="success"
-        title="Purchase Successful"
-        subtitle={`You bought ${quantityRef.current?.value} of ${product.name}`}
+        title="Added to Basket"
+        subtitle={`${quantityRef.current?.value} of ${product.name}`}
+        className={styles['toast-notification']}
       />,
       {
         position: 'top-right',
@@ -30,15 +32,15 @@ export function ProductCard({ product }: ProductCardProps) {
         hideProgressBar: true,
       }
     );
-  };
+  }, [product.name]);
 
   return (
     <div className={styles['product-card']}>
       <h1>{product.name}</h1>
-      <p>{product.model}</p>
-      <p>{product.manufacturer}</p>
-      <span>{product.cost_in_credits}</span>
-      <div className="product-actions">
+      <p>Model: {product.model}</p>
+      <p>Manufacturer: {product.manufacturer}</p>
+      <p>Cost in credits: {product.cost_in_credits}</p>
+      <div className={styles['product-actions']}>
         <NumberInput
           id={`quantity-${product.name}`}
           min={1}
@@ -47,7 +49,9 @@ export function ProductCard({ product }: ProductCardProps) {
           label="Quantity"
           hideLabel
         />
-        <Button onClick={handleBuy}>Buy</Button>
+        <Button kind="primary" onClick={handleBuy}>
+          Buy
+        </Button>
       </div>
     </div>
   );

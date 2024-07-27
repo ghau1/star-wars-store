@@ -5,17 +5,26 @@
   display: flex;
   flex-direction: column;
   align-items: flex-start;
-  margin-bottom: 2rem;
-  width: 20rem;
-  height: 20rem;
+  margin-bottom: 1rem;
+  min-height: 16rem;
 
-  .product-actions {
+  & > div.product-actions {
     display: flex;
     align-items: center;
-    margin-top: 1rem;
-
-    .cds--number {
-      margin-right: 1rem;
-    }
+    margin: 1rem;
+    gap: 1rem;
   }
+
+  & > p {
+    margin-top: .25rem;
+  }
+
+  & > h1 {
+    font-size: 2rem;
+    font-weight: 400;
+  }
+}
+
+.toast-notification {
+  max-width: 17rem;
 }

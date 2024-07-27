@@ -17,9 +17,4 @@ test('renders starships and handles pagination', async () => {
 
   const starshipName = await screen.findByText(/Millennium Falcon/i);
   expect(starshipName).toBeInTheDocument();
-
-  // const nextButton = screen.getByText(/Next Page/i);
-  // fireEvent.click(nextButton);
-
-  //   expect(await screen.findByText(/Loading.../i)).toBeInTheDocument();
 });

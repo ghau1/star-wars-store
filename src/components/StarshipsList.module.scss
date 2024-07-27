@@ -1,4 +1,25 @@
 .starships-list {
-  width: 100%;
-  margin-left: 15rem;
+  & > h1 {
+    margin-left: 1rem;
+    margin-top: 3.5rem;
+    margin-bottom: 1rem;
+    font-size: 2.5rem;
+    font-weight: 400;
+    @media screen and (min-width: 672px) {
+      margin-left: 2rem;
+    }
+    @media screen and (min-width: 1584px) {
+      margin-left: 2.5rem;
+    }
+  }
+
+  & > .pagination {
+    padding: 0 1rem;
+    @media screen and (min-width: 672px) {
+      padding: 0 2rem;
+    }
+    @media screen and (min-width: 1584px) {
+      padding: 0 2.5rem;
+    }
+  }
 }

@@ -2,10 +2,7 @@ import { http, HttpResponse } from 'msw';
 import { StarshipsResponse } from '../api/types';
 
 export const handlers = [
-  http.get('https://swapi.dev/api/starships/', ({ request }) => {
-    const url = new URL(request.url)
-    const page = url.searchParams.get('page');
-
+  http.get('https://swapi.dev/api/starships/', () => {
     return HttpResponse.json<StarshipsResponse>({
       count: 1,
       next: null,
